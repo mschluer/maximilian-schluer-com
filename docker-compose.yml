@@ -1,5 +1,5 @@
 services:
-  mxvega_website-en:
+  website-en:
     container_name: "website-en"
     build: /home/docker-operator/website-en
     expose:
