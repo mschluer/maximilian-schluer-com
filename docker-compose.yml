@@ -1,0 +1,17 @@
+services:
+  mxvega_website-en:
+    container_name: "website-en"
+    build: /home/docker-operator/website-en
+    expose:
+      - 80
+    restart: always
+    environment:
+      - "VIRTUAL_HOST=maximilian-schluer.com,www.maximilian-schluer.com"
+      - "LETSENCRYPT_HOST=maximilian-schluer.com,www.maximilian-schluer.com"
+    networks:
+      - rproxy
+
+networks:
+  rproxy:
+    name: "rproxy"
+    external: true
